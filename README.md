@@ -1,2 +1,2 @@
 # task_python
-bootcamp python
+bootcamp machine lerning
