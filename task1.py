@@ -8,7 +8,7 @@ def tokenizer(raw_text):
     file=open(raw_text,'r')
     read_file = file.read()
     lst = list(set(read_file.split()))
-    symbols = '!"#$%&()*+,-./:;<=>?@[\\]^_{|}~\t\n'
+    symbols = '!"#$%&()*+,-./:;<=>?@[\\]^_{|}~\t\n.'
     filter_list1 = [filter(lambda x:x not in symbols ,str)for str in lst]
     filter_list2 = filter(lambda x:x !='' ,filter_list1)
     length = len(filter_list2)
