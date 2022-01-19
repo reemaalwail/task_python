@@ -17,3 +17,35 @@ def tokenizer(raw_text):
     return index_word,word_index
     
 print(tokenizer('test.txt'))
+
+
+#solu2
+
+
+def tokenizer(raw_text):
+    
+    f = open(raw_text, 'r')
+    text = f.read()
+    word_index={}
+    index_word={}
+    text=text.lower()
+    
+    for i in text:
+        # clean text 
+        if i in '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n':
+           text= text.replace(i,' ')
+      
+    #spilt text to list of words
+    text_list=text.split()
+    #get the unique words
+    unique=list(set(text_list))
+    
+    #create the word to index & index to word
+    for index in range(len(unique)):
+        word_index[unique[index]]=index
+        index_word[index]=unique[index]
+
+    return word_index,index_word
+      
+print(tokenizer('test.txt'))
+
